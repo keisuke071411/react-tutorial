@@ -1,16 +1,10 @@
-import { Route, BrowserRouter, Routes } from "react-router-dom";
-import Home from "./pages/home";
-import PrototypePage from "./pages/prototype";
+import { useRoutes } from "react-router-dom";
+import { routes } from "./RouterConfig";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/prototype" element={<PrototypePage />} />
-      </Routes>
-    </BrowserRouter>
-  );
+  const router = useRoutes(routes);
+
+  return <>{router}</>;
 }
 
 export default App;

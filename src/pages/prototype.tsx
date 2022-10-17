@@ -5,7 +5,10 @@ const PrototypePage = (): JSX.Element => {
   return (
     <Fragment>
       <h1>Prototype Page</h1>
-      <Link to="/">Homeページボタン</Link>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <Link to="/">Homeページボタン</Link>
+        <Link to="/tests">Testページボタン</Link>
+      </div>
     </Fragment>
   );
 };
