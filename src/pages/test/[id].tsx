@@ -1,11 +1,18 @@
 import { Fragment } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-const Home = (): JSX.Element => {
+type Params = {
+  id: string;
+};
+
+const TestDetailPage = (): JSX.Element => {
+  const { id } = useParams<Params>();
+
   return (
     <Fragment>
-      <h1>Home Page</h1>
+      <h1>Home {id} Page</h1>
       <div style={{ display: "flex", flexDirection: "column" }}>
+        <Link to="/">Homeページボタン</Link>
         <Link to="/prototype">Prototypeページボタン</Link>
         <Link to="/tests">Testページボタン</Link>
       </div>
@@ -13,4 +20,4 @@ const Home = (): JSX.Element => {
   );
 };
 
-export default Home;
+export default TestDetailPage;
